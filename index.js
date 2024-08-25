@@ -4,15 +4,11 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.json());
-const mongoose = require('mongoose');
-require('dotenv').config();
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-    mongoose.connect('mongodb+srv://shareefsk219:shareef@shareef.kb3hiuc.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
 });
 
 app.post('/bfhl', (req, res) => {
